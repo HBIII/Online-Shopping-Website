@@ -1,12 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.webdev</groupId>
   <artifactId>BackEnd</artifactId>
-  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>BackEnd Maven Webapp</name>
+  <packaging>jar</packaging>
+
+  <name>BackEnd</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,7 +24,21 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
-    <finalName>BackEnd</finalName>
-  </build>
+		
+	<plugins>
+		<plugin>
+        	<artifactId>maven-compiler-plugin</artifactId>
+        	<version>3.1</version>
+        		<configuration>
+       				<source>1.8</source>
+       				<target>1.8</target>
+        		</configuration>
+		</plugin>
+	</plugins>
+		
+	</build>
+  
+  
 </project>
