@@ -26,6 +26,8 @@
 <script>
 	window.menu = '${title}';
 	
+	window.contextRoot = '${contextRoot}';
+	
 </script>
 
 <!-- Bootstrap Core CSS -->
@@ -69,6 +71,16 @@
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
+			
+			<!-- Load only when user clicks any OR all products-->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProduct == true}">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<!-- Load only when user clicks show product-->
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
 
 		</div>
 
@@ -79,14 +91,14 @@
 		<!-- jQuery -->
 		<script src="${js}/jquery.js"></script>
 
-		<script src="${js}/jquery.validate.js"></script>
-
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
 		
+		<!-- DataTable Pluggin -->
+		<script src="${js}/jquery.dataTables.js"></script>
 		
 		<!-- DataTable Bootstrap Script -->
-		<script src="${js}/bootbox.min.js"></script>
+		<script src="${js}/dataTables.bootstrap.js"></script>
 		
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>

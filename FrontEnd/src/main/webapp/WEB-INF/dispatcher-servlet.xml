@@ -10,7 +10,8 @@
    http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
    
-   <context:component-scan base-package="com.webdev.FrontEnd.controller"/>
+   <context:component-scan base-package="com.webdev.FrontEnd"/>
+   <context:component-scan base-package="com.webdev.BackEnd"/>
    
    <bean id = "viewResolver"
    			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -24,6 +25,7 @@
    
    <mvc:resources location="/assets/" mapping="/resources/**" />
    
+   <mvc:default-servlet-handler />
    
-   
+ 
  </beans>
